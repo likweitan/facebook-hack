@@ -25,10 +25,10 @@ driver = webdriver.Chrome(chrome_options=option, executable_path=PATH)
 driver.get('http://facebook.com/messages/t/2232825190101619')
 
 elem = driver.find_element_by_name('email')  # Find the search box
-elem.send_keys('likweitan@hotmail.com')
+elem.send_keys('<EMAIL>')
 
 elem = driver.find_element_by_name('pass')  # Find the search box
-elem.send_keys('yj321998' + Keys.RETURN)
+elem.send_keys('<PASSWORD>' + Keys.RETURN)
 
 driver.implicitly_wait(10)
 
@@ -46,13 +46,13 @@ try:
     webdriver.ActionChains(driver).move_to_element(
         element).click(element).perform()
 finally:
-    pyautogui.PAUSE = 2.5
+    pyautogui.PAUSE = 1
     pyautogui.press('esc')
     pyautogui.hotkey('ctrl', 'l')
+    pyautogui.PAUSE = 1
     pyautogui.hotkey('ctrl', 'a')
     pyautogui.write('D:/Pictures/108APPLE/', interval=0.1)
     pyautogui.press('enter')
-    pyautogui.PAUSE = 1
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.press('tab')
